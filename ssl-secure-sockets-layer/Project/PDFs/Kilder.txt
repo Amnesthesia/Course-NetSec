@@ -1,0 +1,2 @@
+http://tools.ietf.org/html/rfc4492#section-5.7
+http://csrc.nist.gov/groups/SMA/forum/documents/october-2012_fcsm_pturner.pdf

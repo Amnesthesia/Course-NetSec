@@ -1,0 +1,440 @@
+\section{Bit-level Description} % Major section
+
+Since encryption of data is one of the responsibilities of the transport
+layer, it's important to mention that this is where encryption such as SSL/TLS (if used) operates. This has a very useful effect which benefits the protocol greatly: Because the transport layer is responsible for establishing connections as well, a connection will simply not be established if the security checks aren't passed.
+
+The SSL / TLS procedure consists of two steps; the first one being authentication, and the second being encryption. Because SSL/TLS is
+based on the use of certificates, certificates is a very vital part of the process. One key difference (pun intended) between SSL and TLS, is that SSL requires the \textbf{server }to prove its identity to the client, whereas TLS requires both parties to prove their identity. 
+
+\subsection[Handshake]{\bfseries\itshape Handshake}
+The first thing that needs to be done to initiate encryption is what we
+call the 'handshake'. This is the first of the two processes that make up the SSL/TLS protocols, and in turn consists of several steps. 
+
+The first step in the handshake process is called the negotiation phase.
+During this phase, each packet contains a specific \textit{message type
+code} [INSERT REFERENCE], which indicates what type of packet is being
+sent. 
+
+First, the client sends a 'hello' to the server, this is called the \textit{ClientHello} (message type 1).
+Listed within this 'hello' message is the algorithms (\textit{Cipher Suites}) which the client supports for encryption, allowing the server to pick the strongest supported algorithm and reply with the server's equivalent to ClientHello, namely \textit{ServerHello }(message type 2), containing a random number, the protocol the server has selected from the list of suggestions from the client, a random number, the CipherSuite [INSERT REFERENCE], and compression method selected; followed by the server's x.509 certificate (message type 11) containing its public key. It's important to note that the server should always select the strongest available protocol.
+
+When the negotiation is complete, the server will send a message indicating that it is done, called the \textit{ServerHelloDone} (message type 14) packet, to which the client will respond with a packet called the \textit{ClientKeyExchange }(message type 16). This packet contains either a \textit{PreMasterSecret }[INSERT REFERENCE] (encrypted with the public key found in the server's certificate), a public key, or nothing at all depending on the selected protocol [INSERT REFERENCE].
+
+The random numbers contained within the \textit{ClientHello }and \textit{ServerHello }will be used to calculate a \textit{MasterSecret} together with the \textit{PreMasterSecret }in the next step. The \textit{MasterSecret }becomes a shared secret between the client and the server, which the data required for encryption will be based on.
+
+When this is complete, both parties are ready to start encrypting data. This begins after the client sends a \textit{ChangeCipherSpec }[INSERT REFERENCE] packet, essentially indicated that \textit{{\textquotedblleft}Now is the time to change to the cipher suite we have agreed to use, with the shared secret we calculated{\textquotedblright}, }and finally a \textit{Finished }packet containing the \textit{message authentication code} [INSERT REFERENCE] and hash calculated from the previous handshake messages.
+
+Upon receiving this from the client, the server in turn responds with a similar \textit{ChangeCipherSpec }packet indicating that it, too, is ready to start encryption of data, followed by a \textit{Finished} (message type 20) message.
+
+Let's have a closer look at each of these messages:
+
+\begin{description}
+	\item[ClientHello] This packet is required to be sent by the client as soon as it connects to the server, but can also be sent as a response to a ClientHelloRequest packet (such a packet is sent by the server if it wants to initiate renegotiation of the session - it's the server's way of saying "Hey, can we renegotiate? You start!" - but it's the client's responsibility to start the process with a ClientHello message). This packet should contain the following values/parameters:
+	\begin{itemize}
+		\item cipher\_suites: This parameter consists of the list of \textit{cipher suites} supported by the client, ordered by the client's preference (first to last). If none of the cipher suites suggested by the client is supported by the server, a handshake failure alert will be returned and the connection will be closed. We'll elaborate further on what a cipher suite actually in following sections.
+		\item client\_version: This parameter indicates which the most recent version of the SSL/TLS protocol the client supports is (actually the version the client wishes to use, but these should be synonymous, as the client is required to suggest using the most recent version it supports).
+		\item compression\_methods: This parameter contains a list of compression methods supported by the client, ordered first-to-last by the client's preference.
+		\item extensions: This parameter is optional, and may be sent if the client wishes to request extended functionality. Server's are required to accept ClientHello packets both \textit{with} and \textit{without} this field supplied, but it's up to the client to decide whether or not it wants to abort the connection if the server does not support the requested extended functionality. Each extension suggested by the client should contain two fields, these being:
+		\begin{itemize}
+			\item extension\_type: The type of the extension being suggested
+			\item extension\_data: Specific information regarding the specified extension type.
+		\end{itemize}
+		\item gmt\_unix\_time: This value contains the current UTC time stamp of the client's internal clock.
+		\item random\_bytes: This value should be 28 randomly generated bytes by a secure random number generator. This value together with the random\_bytes value makes up the \textit{random parameter}.
+		\item session\_id: This value holds the session ID, or nothing if it's either 1) not yet defined by the server (i.e. a handshake has not been completed) or 2) the client wants to renegotiate its security parameters.
+	\end{itemize}
+	
+	\item[ServerHello] This packet is sent as a response to the ClientHello message, after the server has chosen which algorithms it wishes to use from the suggestions made by the client in the preceding ClientHello message. This packet, not unlike the ClientHello, carries some data with it - although rather than suggesting several alternative algorithms, it confirms which ones will be used. Let's have a closer look at these fields:
+	\begin{itemize}
+		\item cipher\_suite: This field should contain the cipher suite selected by the server from the list supplied by the client in the preceding ClientHello message.
+		\item compression\_method: Similarly, this field should contain the compression method selected by the server from the list of suggestions sent with the ClientHello message.
+		
+		\item extensions: This field should contain a list of extensions supported by the server - if (and only if) they were suggested by the client in the ClientHello message. It should serve as a response to the client's way of saying "I request the following additional features: ", by saying "... and of those you requested, I support these: ".
+		
+		\item gmt\_unix\_time: The current UTC time stamp of the server's internal clock.
+		\item random\_bytes: 24 bytes randomly generated by a secure random number generator. Just like in the ClientHello message, this value together with the gmt\_unix\_time value makes up the \textit{random} parameter.
+		
+		\item server\_version: This field contains that suggested by the client in the preceding ClientHello message, and the highest version of the SSL/TLS protocol supported by the server.
+		 
+		\item session\_id: This field contains the unique ID for this session. If one that exists in the server's session cache was suggested by the client in the preceding ClientHello message and the server is willing to resume that session, it will respond with the same session ID. However, if that is not the case a new value will be created - unless the session cannot be resumed, in which case this field will remain empty. 
+	\end{itemize}
+	
+	\item[ServerHelloDone] This message is sent by the server when it's done sending the ServerHello and messages associated with it. It indicates that no more messages will be sent to support the key exchange, and the client is free to continue with its phase of the key exchange. When received by the client, it should verify that a valid certificate was provided if one was required, and that all other parameters in the ServerHello message were okay.
+	
+	\item[Client Key Exchange Message] If the client provides a certificate, this message will be sent right afterwards; otherwise this message will be sent as soon as the client receives the \textit{ServerHelloDone} message. \\This message sets the premaster secret by either sending the domain parameters (when Diffie-Hellman is used) or sending the secret encrypted with RSA. This message may also be sent without any data whatsoever, in the case the client sends a certificate containing a static DH exponent.
+	
+	\item[ChangeCipherSpec] This message is actually its own protocol, although it consists of only one single byte indicating that now is the time to start encrypting messages using 1) the information both parties have agreed on and 2) the required calculated information.
+	
+	\item[Finished] This message \textit{always} follows a ChangeCipherSpec message, and is the first message encrypted using the agreed-on algorithms, keys and secrets. When received by a party, it must validate that the contents are correct before it's allowed to start sending and receiving data over the newly established secure connection. To be able to validate the contents of a Finished packet, we specification of its content must of course be provided:
+	\begin{itemize}
+		\item finished\_label: This field contains either "client finished", or "server finished", depending on who sent the message.
+
+		\item verify\_data: This field should contain the output from a \textbf{pseudo-random function} that has been passed the \textit{master secret}, \textit{finished label} and a hash of \textbf{all} previous handshake message up to the Finished message. \\\textbf{Note:} The length of this message varies depending on the cipher suite after TLS version 1.1, but in previous versions this message had its size fixed to 12 bytes.
+	\end{itemize}
+	 
+\end{description}
+
+\subsection{x.509 Certificate}
+The certificate provided by the server is of the type x.509 as specified in RFC5280 (and earlier RFC2459) and updated in RFC6818. It is issued by a Certificate Authority, which [supposedly] proves the server's identity as verified by said authority, and contains a number of fields -- in this case used to verify the legitimacy of the other party, as well as generating a private key.
+
+x.509 certificates follow a very specific structure, expressed in ASN.1 (Abstract Syntax Notation One), the structure of which we described earlier in this document.
+
+\subsection{Cipher Suites}
+A \textit{cipher suite} is a collection of algorithms which will be used for establishing the keys used, encrypting the actual message, creating a hash digest of the message, as well as verifying these. The cipher suites used as part of the SSL (and/or TLS) protocol is defined by a cipher suite code. Initially, the cipher suite used is set to \textit{TLS\_NULL\_WITH\_NULL\_NULL}. This must be changed for a secure connection to be established, as it provides no further security than an unsecured connection. As we will see, the format of these cipher suites is as follows: \\
+Ex: [PROTOCOL TO USE]\_[KEY EXCHANGE METHOD]\_WITH\_[METHOD OF SYMMETRIC ENCRYPTION]\_[INTEGRITY CHECK] \\
+For example, \textit{TLS\_DH\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA} would mean that we're using the TLS protocol with Diffie-Hellman RSA for key exchange, Triple-DES in EDE (\textit{Encrypt-Decrypt-Encrypt}) mode and \textit{Cipher Block Chaining}, and SHA to calculate the message digest used for the integrity check.
+
+The following codes and their respective cipher suites are available in SSL, and we'll go through some of these algorithms below:
+
+For RSA:
+
+\begin{tabular}{l l}
+Hex. Code & Cipher Suite \\ \hline
+0x00, 0x01 & TLS\_RSA\_WITH\_NULL\_MD5 \\
+0x00, 0x02 & TLS\_RSA\_WITH\_NULL\_SHA \\
+0x00, 0x3B & TLS\_RSA\_WITH\_NULL\_SHA256 \\
+0x00, 0x04 & TLS\_RSA\_WITH\_RC4\_128\_MD5 \\
+0x00, 0x05 & TLS\_RSA\_WITH\_RC4\_128\_SHA \\
+0x00, 0x0A & TLS\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA \\
+0x00, 0x2F & TLS\_RSA\_WITH\_AES\_128\_CBC\_SHA \\
+0x00, 0x35 & TLS\_RSA\_WITH\_AES\_256\_CBC\_SHA \\
+0x00, 0x3C & TLS\_RSA\_WITH\_AES\_128\_CBC\_SHA256 \\
+0x00, 0x3D & TLS\_RSA\_WITH\_AES\_256\_CBC\_SHA256 \\
+\end{tabular}
+
+
+For Diffie-Hellman:
+
+\begin{tabular}{l l}
+Hex. Code & Cipher Suite \\ \hline
+0x00,0x0D & TLS\_DH\_DSS\_WITH\_3DES\_EDE\_CBC\_SHA \\  
+0x00,0x10 & TLS\_DH\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA \\     
+0x00,0x13 & TLS\_DHE\_DSS\_WITH\_3DES\_EDE\_CBC\_SHA \\  
+0x00,0x16 & TLS\_DHE\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA \\ 
+0x00,0x30 & TLS\_DH\_DSS\_WITH\_AES\_128\_CBC\_SHA \\ 
+0x00,0x31 & TLS\_DH\_RSA\_WITH\_AES\_128\_CBC\_SHA \\   
+0x00,0x32 & TLS\_DHE\_DSS\_WITH\_AES\_128\_CBC\_SHA \\   
+0x00,0x33 & TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA \\  
+0x00,0x36 & TLS\_DH\_DSS\_WITH\_AES\_256\_CBC\_SHA \\  
+0x00,0x37 & TLS\_DH\_RSA\_WITH\_AES\_256\_CBC\_SHA \\   
+0x00,0x38 & TLS\_DHE\_DSS\_WITH\_AES\_256\_CBC\_SHA \\   
+0x00,0x39 & TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA \\  
+0x00,0x3E & TLS\_DH\_DSS\_WITH\_AES\_128\_CBC\_SHA256 \\  
+0x00,0x3F & TLS\_DH\_RSA\_WITH\_AES\_128\_CBC\_SHA256 \\
+0x00,0x40 & TLS\_DHE\_DSS\_WITH\_AES\_128\_CBC\_SHA256 \\
+0x00,0x67 & TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256 \\
+0x00,0x68 & TLS\_DH\_DSS\_WITH\_AES\_256\_CBC\_SHA256 \\
+0x00,0x69 & TLS\_DH\_RSA\_WITH\_AES\_256\_CBC\_SHA256 \\
+0x00,0x6A & TLS\_DHE\_DSS\_WITH\_AES\_256\_CBC\_SHA256 \\
+0x00,0x6B & TLS\_DHE\_RSA\_WITH\_AES\_256\_CBC\_SHA256 \\
+\end{tabular}
+
+\bigskip
+
+\subsection{Authentication and Key Exchange}
+SSL relies mainly on two different algorithms for generating public and private keys, these being Diffie-Hellman, and RSA. However, it also uses some variations of these two algorithms - therefore, we'll go through the basics of both RSA and Diffie-Hellman below, and continue to mention the variations on each.
+
+\subsubsection[Diffie-Hellman]{Diffie-Hellman}
+The Diffie-Hellman key exchange was published in 1976 in a ground breaking paper by Whitfield Diffie and Martin Hellman. Essentially, this algorithm is together with the DES responsible for bringing cryptography to the public eye.
+
+The algorithm devised is a way to generate an identical shared secret without any prior secrets. The algorithm's strength is based on the \textit{discrete logarithm problem}, making it very easy to do one way, but very difficult to reverse. The process does, however, have some prerequisites; these being that the random number \textit{g} must be lower than the prime number \textit{p}, and the prime number \textit{p} must be greater than 2.
+
+The Diffie-Hellman key exchange is based on two parties each agreeing on a randomly generated integer, and a prime integer. Once both parties have agreed on these, they generate a private integer (which must be less than the prime). 
+
+Each party proceeds to raise the generated number to the power of their private number, modulo the prime number they both agreed on, to create their \textit{public key. }Thus, each party continues the procedure by sharing their newly created \textit{public key }with one another, and use this to calculate their \textit{shared secret}. This is done by raising the \textit{other party's }public key to the power of their \textit{private keys }modulo their agreed on prime.
+
+For example, let's assume \textit{Alice }and \textit{Bob} agree on using a prime, \textit{p}, with the value 83, and a generated value \textit{g} of 58.
+
+
+\begin{center}
+\tablehead{}
+\begin{supertabular}{|m{3in}|m{3in}|}
+\hline
+Prime number (p):  & 83\\\hline
+Generated number (g):  & 58\\\hline
+\end{supertabular}
+\end{center}
+
+\bigskip
+
+\begin{flushleft}
+\tablehead{}
+\begin{supertabular}{|m{1.5in}|m{1.2in}m{0.2in}|m{0.2in}m{1.3in}|m{1.5in}|}
+\hline
+\multicolumn{3}{|m{3in}|}{\bfseries Alice} &
+\multicolumn{3}{m{3in}|}{\bfseries Bob}\\\hline
+Private key (a):  &
+\multicolumn{2}{m{1.3in}|}{30} &
+\multicolumn{2}{m{1.5in}|}{Private key (b):} & 65\\\hline
+\begin{tabular}[l]{@{}c@{}}Public key \\ \textit{(g\textsuperscript{a} mod p)}\end{tabular} &
+\multicolumn{2}{m{1.3in}|}{58\textsuperscript{30} mod 83 = 9} &
+\multicolumn{2}{m{1.5in}|}{ \begin{tabular}[l]{@{}c@{}}Public key \\ \textit{(g\textsuperscript{b} mod p)}\end{tabular}} & 58\textsuperscript{65} mod 83 = 22\\\hline
+Bob's public key \textit{B} & \multicolumn{1}{m{1in}|}{22} &
+\multicolumn{2}{m{0.5in}|}{\centering \ \textbf{$\leftarrow
+\rightarrow $}} & Alice's public key \textit{A} & 9\\\hline
+\begin{tabular}[l]{@{}c@{}}Shared key\\\textit{(B\textsuperscript{a} mod p)}\end{tabular} &
+\multicolumn{2}{m{1.5in}|}{22\textsuperscript{30} mod 83 = 29} &
+\multicolumn{2}{m{1.5in}|}{ \begin{tabular}[l]{@{}c@{}}Shared key\\\textit{(A\textsuperscript{b} mod p)} \end{tabular} } &
+9\textsuperscript{65} mod 83 = 29\\\hline
+\multicolumn{6}{|m{6.5in}|}{\centering Shared secret: 29}\\\hline
+\end{supertabular}
+\end{flushleft}
+
+
+\subsubsection[Variations on Diffie-Hellman]{Variations on Diffie-Hellman}
+
+\subsubsection[DSA]{DSA}
+
+\subsubsection[RSA]{RSA}
+The RSA method is similar, albeit different, from the Diffie-Hellman method -- it's similar in the sense that it's based on the exchange of public keys which are used for encryption, and using private keys for decryption.
+Just as with Diffie-Hellman described above, we once again use the \textit{private key} of each party to generate the public key.
+
+The RSA algorithm builds on the principles of modular arithmetics, and especially on two key mathematical algorithms: \textit{Euler's Totient Function} (used to calculate phi ($\phi$) of a given number), and the \textit{Euclidian algorithm} (to calculate the GCD of two given numbers). Let's see how these are used to create the key pair used for encryption the RSA way!
+
+$\phi(i)$ of a given integer $i$ is the amount of numbers between 1 and $i-1$ that are relatively prime -- as in, the amount of number which has $1$ as its only common divisor. Furthermore, $\phi(i)$ can be easily calculated if the given integer $i$ is a product of two \textit{different} primes, as such:
+
+$\phi(P_1*P_2) = P_1-1 * P_2-1$
+
+
+For example, given the integer 39, we could calculate $\phi(39)$ like so:
+
+$\phi(39) = \phi(3*13) = 3-1 * 13-1 = 2 * 12 = 24$
+
+Now, \textit{Euler's Totient Theorem} states that if given two numbers that are relatively prime, then when you raise the lower number to phi of the higher and divide the result by the higher number, you should always get the remainder $1$. 
+In mathematical terms, given the numbers $N$ and $M$, where $N<M$ and $\gcd(N,M)=1$, then $N^{\phi(M)} = 1 \pmod{M}$.
+
+Now, we can also see that
+$N^{\phi(M)} * N^{\phi(M)} = 1 * 1 \pmod{M}$
+
+Which is the same expression as 
+$N^{2\phi(M)} = 1 \pmod{M}$
+
+... and so on. Because of this, we can continue to increase the factor of $\phi(M)$, and still get $1 \pmod{M}$ as the result. This means that we can generalize this equation a bit to become:
+
+$N^{k\phi(M)} = 1 \pmod{M}$
+
+This would mean that $N$ raised to any number $k$ which $\pmod{\phi(M)}$ would become 0 equals 1 $\pmod{M}$.
+
+Therefore, if $\gcd(N,M) = 1, N < M$ then $N^S = 1 \pmod{M}$ when $S = 0 \pmod{\phi(M)}$
+
+If we continue to multiply both sides of this equation with $N$, we see that $N^S * N = 1 * N \pmod{M}$ which is the same as $N^{S+1} = N \pmod{M}$
+
+Now, if we instead find two numbers which we could multiply together to create $S+1$, we could raise $N$ to the product of those numbers to get $N$ back again; but reversing that calculation to find what those two numbers were would be a lot harder.
+
+Consider we find $P$ and $Q$ where $P*Q = 1 \pmod{\phi(M)}$, we see that $N^{(P*Q)} = N \pmod{M}$ (remember, since $P*Q = 1 \pmod{\phi(M)}$, raising $N$ to the power of $P*Q$ is the same as raising $N$ to the power of $S+1$ as we mentioned above) and that $N^{(P*Q)} = (N^P)^Q$.
+
+Now we have two operations here, first we have:
+$N^P$
+Then further raising that to the power of $Q$ will give us $N \pmod{M}$ back again, but lets stop for a bit there - let's say that the cipher text $c$ can be given from that first step; that would give us
+$N^P = c \pmod{M}$
+
+Which we could then turn back into $N \pmod{M}$ like so:
+$c^Q = N \pmod{M}$
+
+\textit{This} is the foundation of RSA. $P$ becomes our public key together with $M$, and $Q$ becomes our private key together with $M$.\\
+
+In the equation above, we can see that raising $N$ to the public key produces the ciper text $c \pmod{M}$, and to get $N$ back we raise the cipher text $c$ to our private key $Q$ and get $N \pmod{M}$.
+
+Let's see how this would work in a more practical sense: \\
+
+Let's say Alice wants Bob to be able to send her encrypted messages which only Alice can decrypt. Just like we previously mentioned in the Diffie-Hellman explanation, Alice needs to calculate a public key based on her private key. But unlike in the Diffie-Hellman example, Alice does not select a completely random number. Instead, she must find \textit{two primes} to multiply together which will become $M$ - since we used the number 39 to explain $\phi$ earlier, let's work with that number again.
+\begin{enumerate}
+	\item Alice selects two prime numbers, $13$ and $3$, to create $M$:
+
+\indent $M = 3*13 = 39$
+
+	\item Alice then calculates $\phi(M)$ like so:
+\indent $\phi(M) = 3-1 * 13-1 = 24$
+ 
+	\item Alice must then find $P$ and $Q$ where $P*Q = 1 \pmod{\phi(M)}$ or:
+
+\indent $P*Q = 1 \pmod{24}$ \\
+
+$P$ and $Q$ must be relatively prime to $\phi(M)$ (24), which means that $\gcd(P,\phi(M)) = 1$ and $\gcd(Q,\phi(N)) = 1$. Preferably, $P$ and $Q$ should also be relatively prime to one another.\\
+
+	\item Alice therefore lets her private key $Q = 53$ and now has the equation $ P*53 = 1 \pmod{\phi(M)}$, or $P*53 = 1 \pmod{24}$ which can be expressed as:
+$P*53 = k * 24 +1$ where $k$ can be any number.
+
+	\item Alice sees that $Q = 5$ is one of the possible solutions to this, because $5*53 = 265 = 1 \pmod{24}$. The criteria $\gcd(P,Q) = 1$ is satisfied as $\gcd(5,53) = 1$, and the greatest common divisor of $Q$ and $\phi(M)$ is $1$, and so is the greatest common divisor of $P$ and $\phi(M)$, making them relatively prime.
+
+	\item Alice has now calculated her public key $P$ to be 5, and her private key $Q$ to be 53.
+
+	\item Alice sends Bob her public key, which Bob can use to encrypt messages.
+	
+\end{enumerate} 
+
+Once again we see that the public key cannot be used to \textit{decrypt} messages it has encrypted. However, Alice's \textit{private key} $Q$ can decrypt messages encrypted with her public key.
+
+In a similar fashion, Bob would calculate his own public key and send to Alice, which Alice would use to encrypt \textit{her} messages to Bob, as is the basis for all public-key encryption algorithms.
+
+\subsubsection[Variations on RSA]{Variations on RSA}
+
+\subsubsection[The Elliptic Curve variety]{The Elliptic Curve variety}
+
+Whilst Diffie-Hellman as mentioned above is good, it's also rather old and people are familiar with how it works. In recent years, another field of cryptography has grown increasingly popular - namely Elliptic Curve Cryptography. Whereas in the regular version of Diffie-Hellman we have the domain parameters $p > 2$ and $g < p$, the prime number and the generated number, in the Elliptic Curve version things work slightly different.
+Instead, we have the domain parameters $E$ which is the elliptic curve to use (for example p-256r1) and $G$ which is a base point on this curve.
+The curves used for this all have a set of predefined parameters, and the curves themselves are predefined by the Standards for Efficient Cryptography Group, or SECG.
+Whereas we won't go deep into the subject of Elliptic Curves in this report, we felt the need to mention their existence and purpose. For EC-Diffie-Hellman specifically, the difference from regular Diffie-Hellman is that knowing a curve $E$ and it's parameters, as well as a base point $G$ on this curve, the private key $Q$ becomes a randomly chosen number between $1$ and $N-1$, where $N$ is the order of $G$; and the public key $P$ becomes the product of $Q*G$. 
+One great benefit of using Elliptic Curves is the amount of data that needs to be communicated and calculated; which makes it especially useful for mobile devices where computational power is limited.
+For example, using Elliptic Curves we can get the same level of security as RSA with a 1024 bit long key, by using only a 160 bit sized key (https://www.rsa.com/rsalabs/node.asp?id=2245). 
+
+\subsection{Encryption}
+
+\subsubsection{AES - Advanced Encryption Standard}
+
+\subsubsection{Variations on AES: AES128 and AES256}
+
+\subsubsection{DES - Data Encryption Standard}
+
+DES is a encryption algorithm using block cipher. It takes plaintext of 64-bits and encrypts it to a ciphertext of the same size. DES operates with a key, so the encryption/decryption will only be doable for those who know the key. This is a 64-bit key. \cite{des3}
+
+In this example we use\textbf{'M'} as plain textmessage, and \textbf{'K'} to be the input for encryption/decryption key.
+
+\textbf{M} = ABCDEFGH\\
+\textbf{M}(hex) = 4142434445464748\\
+\textbf{M}(binary)= 01000001 01000010 01000011 01000100 01000101 01000110 01000111 01001000\\
+\bigskip
+\textbf{K} = 0202020202020202 (in hex, used this number for simplicity)\\
+\textbf{K}(binary)= 00000010 00000010 00000010 00000010 00000010 00000010 00000010 00000010\\
+\paragraph{Creating 16 subkeys:}
+\bigskip
+The reason for making these subkeys, is that they will be used later for the Feistel function. You have a input key \textbf{'K'} which give us a 64-bit binary key. To create the 16 subkeys you first have to make a permuted key \textbf{'K+'}. This key will be permuted using a table \textbf{'PC-1'}. In the \textbf{'PC-1'} table the first entry is "57"\cite{tableWiki}. This means the that first bit in the permuted key \textbf{'K+'} will become the 57th bit in the original key \textbf{'K'}. Because of the permutation, the new key wil nowl be 56-bits.\cite{des1,des3}
+\bigskip
+
+\textbf{eks:} \\
+original 64-bit key:\\
+\textbf{K} = 00000010 00000010  00000010  00000010  00000010  00000010  00000010  00000010\\
+\bigskip
+permuted 56-bit key:\\
+\textbf{K+} = 0000000 0000000 0000000 0000000 1111111 0000000 0000000 0000000\\
+\bigskip
+When the permuted key \textbf{'K+}' is made, it will be split into a left and a right half (\textbf{$C_0$} and \textbf{$D_0$}). They will each have 28 bits now. \cite{des3}\\
+\bigskip
+$C_0$ = 0000000 0000000 0000000 0000000\\
+$D_0$ = 1111111 0000000 0000000 0000000\\
+\bigskip
+Now it creates 16 blocks of \textbf{C} and \textbf{D} by rotating the bits to left, by a specified amount declared in the algorithm(see rotations in the key schedule \cite{tableWiki}).\\
+\bigskip
+$C_0$ = 0000000000000000000000000000\\
+$D_0$ = 1111111000000000000000000000\\
+\bigskip
+$C_1$ = 0000000000000000000000000000\\
+$D_1$ = 1111110000000000000000000001\\
+\bigskip
+$C_2$ = 0000000000000000000000000000\\
+$D_2$ = 1111100000000000000000000011\\
+\bigskip
+$C_3$ = 0000000000000000000000000000\\
+$D_3$ = 1110000000000000000000001111\\
+\bigskip
+$C_4$ = 0000000000000000000000000000\\
+$D_4$ = 1000000000000000000000111111\\
+\bigskip
+$C_5$ = 0000000000000000000000000000\\
+$D_5$ = 0000000000000000000011111110\\
+\bigskip
+$C_6$ = 0000000000000000000000000000\\
+$D_6$ = 0000000000000000001111111000\\
+\bigskip
+$C_7$  = 0000000000000000000000000000\\
+$D_7$ = 0000000000000000111111100000\\
+\bigskip
+$C_8$  = 0000000000000000000000000000\\
+$D_8$ = 0000000000000011111110000000\\
+\bigskip
+$C_9$ = 0000000000000000000000000000\\
+$D_9$ = 0000000000000111111100000000\\
+\bigskip
+$C_{10}$ = 0000000000000000000000000000\\
+$D_{10}$ = 0000000000011111110000000000\\
+\bigskip
+$C_{11}$ = 0000000000000000000000000000\\
+$D_{11}$ = 0000000001111111000000000000\\
+\bigskip
+$C_{12}$ = 0000000000000000000000000000\\
+$D_{12}$ = 0000000111111100000000000000\\
+\bigskip
+$C_{13}$ = 0000000000000000000000000000\\
+$D_{13}$ = 0000011111110000000000000000\\
+\bigskip
+$C_{14}$ = 0000000000000000000000000000\\
+$D_{14}$ = 0001111111000000000000000000\\
+\bigskip
+$C_{15}$ = 0000000000000000000000000000\\
+$D_{15}$ = 0111111100000000000000000000\\
+\bigskip
+$C_{16}$ = 0000000000000000000000000000\\
+$D_{16}$ = 1111111000000000000000000000\\
+\bigskip
+
+Now its time to form the actuall subkeys. The subkeys are formed by doing a permutation on each block pair $C_n$$D_n$.These keys are now 56-bit, so now it uses the \textbf{'PC-2'}  \cite{tableWiki} table. By using permutation on the block pairs it will make the keys 48-bit. \cite{des3,des1}\\
+\bigskip
+
+$K_1$ = 000000 000000 000000 000000 001000 100010 000110 000011\\
+$K_2$ = 000000 000000 000000 000000 001001 100010 000100 000011\\
+$K_3$ = 000000 000000 000000 000000 001001 100000 000101 000010\\
+$K_4$ = 000000 000000 000000 000000 010001 001000 000101 000010\\
+$K_5$ = 000000 000000 000000 000000 000001 001000 010001 001000\\
+$K_6$ = 000000 000000 000000 000000 010010 001001 010001 001000\\
+$K_7$ =  000000 000000 000000 000000 000010 001101 010000 101000\\
+$K_8$ =  000000 000000 000000 000000 000010 000101 110000 100000\\
+$K_9$ =  000000 000000 000000 000000 000010 000101 100000 110000\\
+$K_{10}$ =  000000 000000 000000 000000 100000 010100 100000 110000\\
+$K_{11}$ =  000000 000000 000000 000000 100000 010000 101000 010000\\
+$K_{12}$ =  000000 000000 000000 000000 100100 010000 001000 010100 \\
+$K_{13}$ =  000000 000000 000000 000000 000100 010000 001010 000100\\
+$K_{14}$ =  000000 000000 000000 000000 000100 000010 000010 000101\\
+$K_{15}$ =  000000 000000 000000 000000 001000 100010 000010 000101\\
+$K_{16}$ =  000000 000000 000000 000000 001000 100010 000010 000011\\
+\bigskip
+
+\paragraph{Encryption of message 'M':}
+\bigskip
+
+First there is a permutation of \textbf{'M'} using the initial permutation \cite{tableWiki} table. This will be done just like the subkeys was made, where it use the entries in table to get the correct bit. \cite{des2} \\
+\bigskip
+Eks:\\
+\textbf{M} = 01000001 01000010 01000011 01000100 01000101 01000110 01000111 01001000\\
+\bigskip
+after doing permutation on \textbf{'M'}:\\
+\textbf{IP} = 11111111 00000000 01111000 01010101 00000000 00000000 10000000 01100110\\
+\bigskip
+Then \textbf{IP} is devided into a left half and a right half, both value of 32 bits\\
+\bigskip
+$L_0$ =  11111111 00000000 01111000 01010101\\
+$R_0$ = 00000000 00000000 10000000 01100110\\
+\bigskip
+what happens next is that the blocks created from \textbf{IP} will go through 16 iterations of Feistel and XOR operation.
+In the first round of iteration one of the blocks (\textbf{L} or \textbf{R}) will be sent as input in the feistel function together with subkey $'K_n$', where \textbf{'n'} represent the round of iteration the process is at. The output of the Feistel function will then be XOR'ed with the other half-block (\textbf{L} or \textbf{R}, not the one that is used in Feistel). After this is done, the iteration goes to the next round. Now the half blocks switch place. So for the next round the results from the half-block XOR'ed with the output of Feistel, will be sent as input for Feistel. While the half-block from previous round who was sent as input for Feistel, will 
+be XOR'ed with output of the new Feistel operation. \cite{des1,des2,des3,desWiki,feistelWiki}\\
+\bigskip
+
+\textbf{Eks:}\\
+Round 1:\\
+$R_0$ is sent as input for Feistel, f ($R_0$, $K_1$)\\
+then $R_1$ =  $L_0$ $\oplus$  output of Feistel\\
+\bigskip
+Round 2:\\
+$R_1$ is sent as input for Feistel, f ($ R_1$, $K_2$)\\
+$R_2$ = $R_0$ $\oplus$  output of Feistel\\
+\bigskip
+this repeats for 16 rounds. After the 16th round the two half-block will be combined again and will be going through a final permutation (\textbf{FP}) using the \textbf{FP} table \cite{tableWiki}. Now the key is encrypted. To decrypt, it will go through the same iterations, with only minor changes. "The Feistel structure ensures that decryption and encryption are very similar processes — the only difference is that the subkeys are applied in the reverse order when decrypting." \cite{desWiki}\\
+\bigskip
+
+\paragraph{Feistel function:}
+What happens in the Feistel function is that it first takes in a half block and a subkey as input. The half block is then going through Expansion.\cite{des1,feistelWiki} It is expanded from 32-bit to 48-bits. This is done by using expansion permutation \cite{tableWiki}. The output from expansion  is then XOR'ed with the 48-bit subkey. After the XOR is done, the combined key will now be divided in 8 6-bit pieces. This will be the input for the Substitution boxes. "Each of the eight S-boxes replaces its six input bits with four output bits according to a non-linear transformation, provided in the form of a lookup table." \cite{desWiki}. There is a substitution box for each of the 8 6-bit pieces \cite{sboxWiki}. By looking at the table you have a row which represents the outer bits and the column for the inner 4 bits of the piece. Eks: 101010, 1 and 0 is the outer bits, and 0101 is the inner bits.\\
+When the substitution is done on each of the 8 6-bits pieces, It will then use Permutation(\textbf{P}, \cite{tableWiki}) on the 32 bits. The output from \textbf{P} will be the output from the Feistel function.\\
+\bigskip
+
+
+\subsubsection{Variations on DES - Triple-DES}
+
+\subsubsection{RC4 - Rivest Cipher 4}
+
+\subsection{Integrity Check}
+
+\subsubsection{MD5 - Message-Digest algorithm 5}
+
+\subsubsection{SHA - Secure Hash Algorithm}
+
+\subsubsection{Variations on SHA: SHA1 and SHA256}

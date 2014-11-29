@@ -1,0 +1,46 @@
+\contentsline {section}{Contents}{1}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Subsection 1}{3}
+\contentsline {subsection}{\numberline {1.2}Subsection 2}{3}
+\contentsline {subsubsection}{\numberline {1.2.1}Subsubsection 1}{3}
+\contentsline {subsubsection}{\numberline {1.2.2}Subsubsection 2}{4}
+\contentsline {section}{\numberline {2}Short Description Of The Protocol}{5}
+\contentsline {subsection}{\numberline {2.1}SSL Handshake}{5}
+\contentsline {subsubsection}{\numberline {2.1.1}9 Steps To Secure Communication}{5}
+\contentsline {section}{\numberline {3}An Overview Of SSL}{7}
+\contentsline {subsection}{\numberline {3.1}Global Description}{7}
+\contentsline {subsubsection}{\numberline {3.1.1}Advantages}{7}
+\contentsline {subsubsection}{\numberline {3.1.2}Disadvantages}{8}
+\contentsline {subsection}{\numberline {3.2}Certificate Authority}{9}
+\contentsline {subsubsection}{\numberline {3.2.1}Introduction}{9}
+\contentsline {subsubsection}{\numberline {3.2.2}Issuing A Certificate}{9}
+\contentsline {subparagraph}{Domain Validation}{9}
+\contentsline {subparagraph}{Example}{9}
+\contentsline {subsubsection}{\numberline {3.2.3}Providers}{9}
+\contentsline {subsubsection}{\numberline {3.2.4}CA Compromise}{9}
+\contentsline {subparagraph}{DigiNotar Incident}{10}
+\contentsline {subparagraph}{Consequences Of A Compromise}{10}
+\contentsline {subsection}{\numberline {3.3}Graphical Representation}{11}
+\contentsline {section}{\numberline {4}Bit-level Description}{15}
+\contentsline {subsection}{\numberline {4.1}Handshake}{15}
+\contentsline {subsection}{\numberline {4.2}x.509 Certificate}{20}
+\contentsline {subsection}{\numberline {4.3}Cipher Suites}{20}
+\contentsline {subsection}{\numberline {4.4}Authentication and Key Exchange}{22}
+\contentsline {subsubsection}{\numberline {4.4.1}Diffie-Hellman}{22}
+\contentsline {subsubsection}{\numberline {4.4.2}Variations on Diffie-Hellman}{23}
+\contentsline {subsubsection}{\numberline {4.4.3}DSA}{23}
+\contentsline {subsubsection}{\numberline {4.4.4}RSA}{23}
+\contentsline {subsubsection}{\numberline {4.4.5}Variations on RSA}{26}
+\contentsline {subsubsection}{\numberline {4.4.6}The Elliptic Curve variety}{26}
+\contentsline {subsection}{\numberline {4.5}Encryption}{27}
+\contentsline {subsubsection}{\numberline {4.5.1}AES - Advanced Encryption Standard}{27}
+\contentsline {subsubsection}{\numberline {4.5.2}Variations on AES: AES128 and AES256}{27}
+\contentsline {subsubsection}{\numberline {4.5.3}DES - Data Encryption Standard}{27}
+\contentsline {subsubsection}{\numberline {4.5.4}Variations on DES - Triple-DES}{27}
+\contentsline {subsubsection}{\numberline {4.5.5}RC4 - Rivest Cipher 4}{27}
+\contentsline {subsection}{\numberline {4.6}Integrity Check}{27}
+\contentsline {subsubsection}{\numberline {4.6.1}MD5 - Message-Digest algorithm 5}{27}
+\contentsline {subsubsection}{\numberline {4.6.2}SHA - Secure Hash Algorithm}{27}
+\contentsline {subsubsection}{\numberline {4.6.3}Variations on SHA: SHA1 and SHA256}{27}
+\contentsline {section}{\numberline {5}Analysis Of The Recording}{28}
+\contentsline {section}{\numberline {6}Attacks Against The SSL Protocol}{35}

@@ -1,0 +1,29 @@
+\section{Introduction} % Major section
+
+\subsection{Subsection 1} % Sub-section
+
+\lipsum[1] % Dummy text
+
+%------------------------------------------------
+
+\subsection{Subsection 2} % Sub-section
+
+\lipsum[2] % Dummy text
+
+%------------------------------------------------
+
+\subsubsection{Subsubsection 1} % Sub-sub-section
+
+\lipsum[3] % Dummy text
+
+\begin{figure}[H] % Example image
+\center{\includegraphics[width=0.5\linewidth]{placeholder}}
+\caption{Example image.}
+\label{fig:speciation}
+\end{figure}
+
+%------------------------------------------------
+
+\subsubsection{Subsubsection 2} % Sub-sub-section
+
+\lipsum[4] % Dummy text

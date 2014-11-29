@@ -1,0 +1,5 @@
+\section {Attacks Against The SSL Protocol}
+In the past we have seen a few different attacks targeting the SSL/TLS protocol, including BEAST~\cite{beastattack}, CRIME~\cite{crimeattack} and Lucky 13~\cite{lucky13}.\\
+And now, on the 20th International Workshop on Fast Software Encryption and the Blackhat Security conference in Amsterdam this year, these new attacks were presented to the participants.\\\
+
+What these attacks have in common is that they all are capable of silently decrypting browser cookies used to log in to websites. And obviously this may be a real threat against users of websites which are securing their communication with SSL/TLS.

@@ -1,0 +1,82 @@
+@misc{diginotarIncident,
+      howpublished = {\url{http://www.darkreading.com/attacks-breaches/digital-certificate-authority-hacked-doz/231600498}},
+      note = {Accessed May 9, 2013},
+      title = {Digital Certificate Authority Hacked, Dozens Of Phony Digital Certificates Issued},
+      author = {Kelly Jackson Higgins}
+}
+@misc{rfcEllipticCurve,
+      howpublished = {\url{http://tools.ietf.org/html/rfc4492}},
+      note = {Accessed May 9, 2013},
+      author = {Network Working Group},
+      title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)}
+}
+@misc{ciscoSSLHandshake,
+      howpublished = {\url{http://www.cisco.com/en/US/docs/interfaces_modules/services_modules/ace/v3.00_A2/configuration/ssl/guide/overview.htm}},
+      note = {Accessed May 9, 2013},
+      author = {Cisco},
+      title = {SSL Guide vA2(1.0)}
+}
+@misc{wikipediaSSLTLS,
+      howpublished = {\url{http://en.wikipedia.org/wiki/Secure_Sockets_Layer}},
+      note = {Accessed 8 May, 2013},
+      author = {Wikipedia},
+      title = {Transport Layer Security}
+}
+@misc{wikipediaHTTPS,
+      howpublished = {\url{http://en.wikipedia.org/wiki/HTTP_Secure}},
+      note = {Accessed 8 May, 2013},
+      author = {Wikipedia},
+      title = {HTTP Secure}
+}
+@misc{digicert,
+      howpublished = {\url{http://www.digicert.com/ssl.htm}},
+      note = {Accessed on 7 May, 2013},
+      author = {Digicert},
+      title = {Digicert SSL Description}
+}
+@misc{sslshopper,
+      howpublished = {\url{http://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html}},
+      note = {Accessed on 7 May, 2013},
+      author = {SSLShopper},
+      title = {The Purpose of using SSL Certificates}
+}
+
+%Image sources:
+@misc{browservisualcues,
+      howpublished = {\url{http://edge1.digicert.com/images/ev2.jpg}},
+      author = {Digicert},
+      title = {Browser Visual Cues}
+}
+@misc{Symmetric_encryption,
+      howpublished = {\url{http://edge1.digicert.com/images/public-key.jpg}},
+      author = {Digicert},
+      title = {Symmetric encryption}
+}
+@misc{Asymmetric_encryption,
+      howpublished = {\url{http://edge1.digicert.com/images/encrypt-decrypt.jpg}},
+      author = {Digicert},
+      title = {Asymmetric encryption}
+}
+@misc{SSL_connection_process,
+      howpublished = {\url{http://www.sslshopper.com/assets/images/what-is-ssl-connection-process.png}},
+      author = {SSLshopper},
+      title = {SSL connection process}
+}
+@misc{pki_overview,
+      howpublished = {\url{http://www.sslshopper.com/assets/images/pki-overview.png}},
+      author = {SSLshopper},
+      title = {PKI Overview}
+}
+@misc{green_bar,
+      howpublished = {\url{http://www.symantec.com/content/en/us/enterprise/images/theme/verisign/b-thm-verisign-tab2-green-bar.gif}},
+      author = {Symantec},
+      title = {Green bar overview}
+}
+
+
+%@Misc{timmurphy.org,
+%howpublished = {\url{http://timmurphy.org/2009/07/22/line-spacing-in-latex-documents/}},
+%note = {Accessed April 4, 2010},
+%title = {Line Spacing in LaTeX documents},
+%author = {Murphy, Timothy I}
+%}

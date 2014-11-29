@@ -1,0 +1,292 @@
+\begin{thebibliography}{10}
+
+\bibitem{wikipediaHTTPS}
+Wikipedia.
+\newblock Http secure.
+\newblock \url{http://en.wikipedia.org/wiki/HTTP_Secure}.
+\newblock Accessed 8 May, 2013.
+
+\bibitem{wikipediaSSLTLS}
+Wikipedia.
+\newblock Transport layer security.
+\newblock \url{http://en.wikipedia.org/wiki/Secure_Sockets_Layer}.
+\newblock Accessed 8 May, 2013.
+
+\bibitem{browservisualcues}
+Digicert.
+\newblock Browser visual cues.
+\newblock \url{http://edge1.digicert.com/images/ev2.jpg}.
+
+\bibitem{digicert}
+Digicert.
+\newblock Digicert ssl description.
+\newblock \url{http://www.digicert.com/ssl.htm}.
+\newblock Accessed on 7 May, 2013.
+
+\bibitem{sslshopper}
+SSLShopper.
+\newblock The purpose of using ssl certificates.
+\newblock
+  \url{http://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html}.
+\newblock Accessed on 7 May, 2013.
+
+\bibitem{diginotarIncident}
+Kelly~Jackson Higgins.
+\newblock Digital certificate authority hacked, dozens of phony digital
+  certificates issued.
+\newblock
+  \url{http://www.darkreading.com/attacks-breaches/digital-certificate-authority-hacked-doz/231600498}.
+\newblock Accessed May 9, 2013.
+
+\bibitem{SSL_connection_process}
+SSLshopper.
+\newblock Ssl connection process.
+\newblock
+  \url{http://www.sslshopper.com/assets/images/what-is-ssl-connection-process.png}.
+
+\bibitem{Asymmetric_encryption}
+Digicert.
+\newblock Asymmetric encryption.
+\newblock \url{http://edge1.digicert.com/images/encrypt-decrypt.jpg}.
+
+\bibitem{Symmetric_encryption}
+Digicert.
+\newblock Symmetric encryption.
+\newblock \url{http://edge1.digicert.com/images/public-key.jpg}.
+
+\bibitem{pki_overview}
+SSLshopper.
+\newblock Pki overview.
+\newblock \url{http://www.sslshopper.com/assets/images/pki-overview.png}.
+
+\bibitem{green_bar}
+Symantec.
+\newblock Green bar overview.
+\newblock
+  \url{http://www.symantec.com/content/en/us/enterprise/images/theme/verisign/b-thm-verisign-tab2-green-bar.gif}.
+
+\bibitem{rfcClientKeyExchange}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - client key exchange
+  message.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-57}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcSSLClientKeyExchange}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - client key
+  exchange message.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#section-5.6.7}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcCipherSuiteDefinition}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - cipher suite
+  definitions.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-83}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcCipherSuiteList}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - the cipher suite.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-75}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcClientHello}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - clienthello.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-39}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcSSLClientHello}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - client hello.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#section-5.6.1.2}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcServerHello}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - serverhello.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-42}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcSSLServerHello}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - server hello.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#section-5.6.1.3}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcChangeCipherSpecProtocol}
+The transport layer security (tls) protocol - change cipher spec protocol.
+\newblock \url{}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcSSLChangeCipherSpecProtocol}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - change cipher
+  spec protocol.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#section-5.3}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcFinished}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - finished.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-63}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcSSLFinished}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - finished.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#section-5.6.9}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcServerHelloDone}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - serverhellodone.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-55}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcSSLServerHelloDone}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - server hello
+  done.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#section-5.6.5}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcServerCertificate}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - server certificate.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#section-7.4.2}.
+\newblock Internet RFC5246.
+
+\bibitem{rfcX509certificateStructure}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock Internet x.509 public key infrastructure certificate and certificate
+  revocation list - basic certificate fields.
+\newblock \url{https://tools.ietf.org/html/rfc5280\#section-4.1}.
+\newblock Internet RFC5280.
+
+\bibitem{rfcSSLCipherSuiteList}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - the
+  ciphersuite.
+\newblock \url{https://tools.ietf.org/html/rfc6101\#appendix-A.6}.
+\newblock Internet RFC6101.
+
+\bibitem{NewDirectionsInCryptography}
+Martin E.~Hellman Whitfield~Diffie.
+\newblock New directions in cryptography.
+\newblock
+  \url{http://www.cs.jhu.edu/~rubin/courses/sp03/papers/diffie.hellman.pdf},
+  1976.
+
+\bibitem{algorithmDiffieHellman}
+RTFM~Inc. E.~Rescorla.
+\newblock Diffie-hellman key agreement method.
+\newblock \url{http://xml2rfc.tools.ietf.org/html/rfc2631\#section-2.1}, 1999.
+\newblock RFC2631.
+
+\bibitem{rfcDHstaticmode}
+Inc. E.~Rescorla, RTFM.
+\newblock Diffie-hellman key agreement method - static-static mode.
+\newblock \url{http://xml2rfc.tools.ietf.org/html/rfc2631\#section-2.4}.
+\newblock Internet RFC2631.
+
+\bibitem{rfcDHEparams}
+RTFM~Inc. T.~Dierks, E.~Rescorla.
+\newblock The transport layer security (tls) protocol - server key exchange
+  message.
+\newblock \url{https://tools.ietf.org/html/rfc5246\#page-51}.
+\newblock Internet RFC5246.
+
+\bibitem{rsaKeyGen}
+Jeff Forbes.
+\newblock Compsci 1: Principles of computer science, lecture 13.
+\newblock
+  \url{http://www.cs.duke.edu/courses/spring07/cps001/notes/lect13-4up.pdf},
+  2007.
+
+\bibitem{rsaKeyTypes}
+B.~Kaliski J.~Jonsson.
+\newblock Public-key cryptography standards (pkcs) 1: Rsa cryptography
+  specifications version 2.1 - key types.
+\newblock \url{"http://xml2rfc.tools.ietf.org/html/rfc3447\#section-3"}, 2003.
+\newblock RFC3447.
+
+\bibitem{rfcSSLDHPreMasterSecret}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - diffie-hellman.
+\newblock \url{http://tools.ietf.org/html/rfc6101\#section-6.1.2}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcSSLRSAPreMasterSecret}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - rsa.
+\newblock \url{http://tools.ietf.org/html/rfc6101\#section-6.1.1}.
+\newblock Internet RFC6101.
+
+\bibitem{rfcSSLMasterSecret}
+P.~Kocher A.~Freier, P.~Karlton.
+\newblock The secure sockets layer (ssl) protocol version 3.0 - cryptographic
+  calculations.
+\newblock \url{http://tools.ietf.org/html/rfc6101\#section-6.1}.
+\newblock Internet RFC6101.
+
+\bibitem{rfc_EC_addendum}
+V.~Gupta C. Hawk B.~Moeller S.~Blake-Wilson, N.~Bolyard.
+\newblock Elliptic curve cryptography (ecc) cipher suites for transport layer
+  security (tls).
+\newblock \url{https://tools.ietf.org/html/rfc4492}.
+\newblock Internet RFC4492.
+
+\bibitem{rfc_EC_DiffieHellman}
+\url{}.
+
+\bibitem{rfc_EC_curves}
+V.~Gupta C. Hawk B.~Moeller S.~Blake-Wilson, N.~Bolyard.
+\newblock Elliptic curve cryptography (ecc) cipher suites for transport layer
+  security (tls) - supported elliptic curves extension.
+\newblock \url{https://tools.ietf.org/html/rfc4492\#section-5.1.1}.
+\newblock Internet RFC4492.
+
+\bibitem{rfcEC_DHDSA}
+V.~Gupta C. Hawk B.~Moeller S.~Blake-Wilson, N.~Bolyard.
+\newblock Elliptic curve cryptography (ecc) cipher suites for transport layer
+  security (tls).
+\newblock \url{https://tools.ietf.org/html/rfc4492\#section-3.1}.
+\newblock Internet RFC4492.
+
+\bibitem{rfc_EC_DHRSA_ECDHERSA_ECDH}
+V.~Gupta C. Hawk B.~Moeller S.~Blake-Wilson, N.~Bolyard.
+\newblock Elliptic curve cryptography (ecc) cipher suites for transport layer
+  security (tls).
+\newblock \url{https://tools.ietf.org/html/rfc4492\#section-2.3}.
+\newblock Internet RFC4492.
+
+\bibitem{ec_strength}
+RSA Laboratories.
+\newblock How do elliptic curve cryptosystems compare with other cryptosystems?
+\newblock \url{https://www.rsa.com/rsalabs/node.asp?id=2245}.
+
+\bibitem{beastattack}
+The Register.
+\newblock World takes notice as ssl-chewing beast is unleashed.
+\newblock \url{http://www.theregister.co.uk/2011/09/27/beast_attacks_paypay/}.
+\newblock Accessed on 13 May, 2013.
+
+\bibitem{crimeattack}
+ArsTechnica.
+\newblock Crack in internet’s foundation of trust allows https session
+  hijacking.
+\newblock
+  \url{http://arstechnica.com/security/2012/09/crime-hijacks-https-sessions/}.
+\newblock Accessed on 13 May, 2013.
+
+\bibitem{lucky13}
+ArsTechnica.
+\newblock ''lucky thirteen'' attack snarfs cookies protected by ssl encryption.
+\newblock
+  \url{http://arstechnica.com/security/2013/02/lucky-thirteen-attack-snarfs-cookies-protected-by-ssl-encryption}.
+\newblock Accessed on 13 May, 2013.
+
+\end{thebibliography}

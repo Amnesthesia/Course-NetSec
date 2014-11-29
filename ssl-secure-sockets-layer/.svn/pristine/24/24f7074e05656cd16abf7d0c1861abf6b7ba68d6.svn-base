@@ -1,0 +1,403 @@
+@misc{diginotarIncident,
+      howpublished = {\url{http://www.darkreading.com/attacks-breaches/digital-certificate-authority-hacked-doz/231600498}},
+      note = {Accessed May 9, 2013},
+      title = {Digital Certificate Authority Hacked, Dozens Of Phony Digital Certificates Issued},
+      author = {Kelly Jackson Higgins}
+}
+@misc{rfcEllipticCurve,
+      howpublished = {\url{http://tools.ietf.org/html/rfc4492}},
+      note = {Accessed May 9, 2013},
+      author = {Network Working Group},
+      title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)}
+}
+@misc{ciscoSSLHandshake,
+      howpublished = {\url{http://www.cisco.com/en/US/docs/interfaces_modules/services_modules/ace/v3.00_A2/configuration/ssl/guide/overview.htm}},
+      note = {Accessed May 9, 2013},
+      author = {Cisco},
+      title = {SSL Guide vA2(1.0)}
+}
+@misc{wikipediaSSLTLS,
+      howpublished = {\url{http://en.wikipedia.org/wiki/Secure_Sockets_Layer}},
+      note = {Accessed 8 May, 2013},
+      author = {Wikipedia},
+      title = {Transport Layer Security}
+}
+@misc{wikipediaHTTPS,
+      howpublished = {\url{http://en.wikipedia.org/wiki/HTTP_Secure}},
+      note = {Accessed 8 May, 2013},
+      author = {Wikipedia},
+      title = {HTTP Secure}
+}
+@misc{digicert,
+      howpublished = {\url{http://www.digicert.com/ssl.htm}},
+      note = {Accessed on 7 May, 2013},
+      author = {Digicert},
+      title = {Digicert SSL Description}
+}
+@misc{sslshopper,
+      howpublished = {\url{http://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html}},
+      note = {Accessed on 7 May, 2013},
+      author = {SSLShopper},
+      title = {The Purpose of using SSL Certificates}
+}
+@misc{beastattack,
+      howpublished = {\url{http://www.theregister.co.uk/2011/09/27/beast_attacks_paypay/}},
+      note = {Accessed on 13 May, 2013},
+      author = {The Register},
+      title = {World takes notice as SSL-chewing BEAST is unleashed}
+}
+@misc{crimeattack,
+      howpublished = {\url{http://arstechnica.com/security/2012/09/crime-hijacks-https-sessions/}},
+      note = {Accessed on 13 May, 2013},
+      author = {ArsTechnica},
+      title = {Crack in Internet’s foundation of trust allows HTTPS session hijacking}
+}
+@misc{lucky13,
+      howpublished = {\url{http://arstechnica.com/security/2013/02/lucky-thirteen-attack-snarfs-cookies-protected-by-ssl-encryption}},
+      note = {Accessed on 13 May, 2013},
+      author = {ArsTechnica},
+      title = {''Lucky Thirteen'' attack snarfs cookies protected by SSL encryption}
+}
+@misc{sslattacks,
+      howpublished = {\url{http://arstechnica.com/security/2013/03/new-attacks-on-ssl-decrypt-authentication-cookies/}},
+      note = {Accessed on 13 May, 2013},
+      author = {ArsTechnica},
+      title = {Two new attacks on SSL decrypt authentication cookies}
+}
+
+%Image sources:
+@misc{browservisualcues,
+      howpublished = {\url{http://edge1.digicert.com/images/ev2.jpg}},
+      author = {Digicert},
+      title = {Browser Visual Cues}
+}
+@misc{Symmetric_encryption,
+      howpublished = {\url{http://edge1.digicert.com/images/public-key.jpg}},
+      author = {Digicert},
+      title = {Symmetric encryption}
+}
+@misc{Asymmetric_encryption,
+      howpublished = {\url{http://edge1.digicert.com/images/encrypt-decrypt.jpg}},
+      author = {Digicert},
+      title = {Asymmetric encryption}
+}
+@misc{SSL_connection_process,
+      howpublished = {\url{http://www.sslshopper.com/assets/images/what-is-ssl-connection-process.png}},
+      author = {SSLshopper},
+      title = {SSL connection process}
+}
+@misc{pki_overview,
+      howpublished = {\url{http://www.sslshopper.com/assets/images/pki-overview.png}},
+      author = {SSLshopper},
+      title = {PKI Overview}
+}
+@misc{green_bar,
+      howpublished = {\url{http://www.symantec.com/content/en/us/enterprise/images/theme/verisign/b-thm-verisign-tab2-green-bar.gif}},
+      author = {Symantec},
+      title = {Green bar overview}
+}
+
+
+%
+% TLS 1.2 and 1.3 RFC references
+% - Messages and definition of terms
+%
+
+
+% Message Codes
+@misc{messageCode,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% PreMasterSecret
+@misc{rfcPreMasterSecret,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% MasterSecret
+@misc{rfcMasterSecret,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% Handshake process
+@misc{rfcHandshakeProcess,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-37}},
+	  author = {},
+	  title = {}
+}
+
+% HelloRequest
+@misc{rfcHelloRequest,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-38}},
+	  author = {},
+	  title = {}
+}
+
+% ClientHello
+@misc{rfcClientHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-39}},
+	  author = {},
+	  title = {}
+}
+
+% ServerHello
+@misc{rfcServerHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-42}},
+	  author = {},
+	  title = {}
+}
+
+% ServerHelloDone
+@misc{rfcServerHelloDone,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-55}},
+	  author = {},
+	  title = {}
+}
+
+% Change Cipher Spec (protocol)
+@misc{rfcChangeCipherSpecProtocol,
+	 howpublished = {\url{}},
+	 author = {},
+	 title = {}
+}
+	 
+
+% Client Key Exchange Message
+@misc{rfcClientKeyExchange,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-37}},
+	  author = {},
+	  title = {}
+}
+
+% Finished
+@misc{rfcFinished,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-37}},
+	  author = {},
+	  title = {}
+}
+
+% x.509 Certificate
+@misc{rfcX509certificate,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-37}},
+	  author = {},
+	  title = {}
+}
+
+% x.509 Certificate structure
+@misc{rfcX509certificateStructure,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5280#section-4.1}},
+	  author = {},
+	  title = {}
+}
+
+% Cipher Suites
+@misc{rfcCipherSuiteDefinition,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-37}},
+	  author = {},
+	  title = {}
+}
+
+% CipherSuite list
+@misc{rfcCipherSuiteList,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-75}},
+	  author = {},
+	  title = {}
+}
+
+%
+% SSL v3.0
+% - Messages and term definitions
+%
+
+% Message Codes
+@misc{sslMessageCodes,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% PreMasterSecret
+@misc{rfcSSLPreMasterSecret,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% MasterSecret
+@misc{rfcSSLMasterSecret,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% Handshake process
+@misc{rfcSSLHandshakeProcess,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.5}},
+	  author = {},
+	  title = {}
+}
+
+% HelloRequest
+@misc{rfcSSLHelloRequest,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.6.1.1}},
+	  author = {},
+	  title = {}
+}
+
+% ClientHello
+@misc{rfcSSLClientHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.6.1.2}},
+	  author = {},
+	  title = {}
+}
+
+% ServerHello
+@misc{rfcSSLServerHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.6.1.3}},
+	  author = {},
+	  title = {}
+}
+
+% ServerHelloDone
+@misc{rfcSSLServerHelloDone,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.6.5}},
+	  author = {},
+	  title = {}
+}
+
+% Client Key Exchange Message
+@misc{rfcSSLClientKeyExchange,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.6.7}},
+	  author = {},
+	  title = {}
+}
+
+% Finished
+@misc{rfcSSLFinished,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.6.9}},
+	  author = {},
+	  title = {}
+}
+
+
+% Cipher Suites
+@misc{rfcSSLCipherSuiteDefinition,
+	  howpublished = {\url{ }},
+	  author = {},
+	  title = {}
+}
+
+% CipherSuite list
+@misc{rfcSSLCipherSuiteList,
+	  howpublished = {\url{ }},
+	  author = {},
+	  title = {}
+}
+
+% Change Cipher Spec (protocol)
+@misc{rfcSSLChangeCipherSpecProtocol,
+	 howpublished = {\url{https://tools.ietf.org/html/rfc6101#section-5.3}},
+	 author = {},
+	 title = {}
+}
+
+
+%
+% RSA
+% + variations
+%
+
+% RSA
+@misc{rsaDefinition,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+%
+% Diffie-Hellman
+% + variations
+%
+
+% New Directions in Cryptography (original paper on Diffie-Hellman)
+@misc{NewDirectionsInCryptography,
+	  howpublished = {\url{http://www.cs.jhu.edu/~rubin/courses/sp03/papers/diffie.hellman.pdf}},
+	  author = {},
+	  title = {}
+}
+
+% Diffie-Hellman
+@misc{algorithmDiffieHellman,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% EC-Diffie-Hellman
+@misc{rfc_EC_DiffieHellman,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% Ephemeral EC-Diffie-Hellman-RSA, EC-Diffie-Hellman-RSA, ECDH_Anon
+@misc{rfc_EC_DHRSA_ECDHERSA_ECDH,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492#section-2.3}},
+	  author = {},
+	  title = {}
+}
+
+% EC-Diffie-Hellman-DSA
+@misc{rfcEC_DHDSA,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492#section-3.1}},
+	  author = {},
+	  title = {}
+}
+
+% Ephemeral Diffie-Hellman parameter exchange
+@misc{rfcDHEparams,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246#page-51}},
+	  author = {},
+	  title = {}
+}
+
+
+%
+% Elliptic Curves
+%
+
+% Elliptic Curve addendum
+@misc{rfc_EC_addendum,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492}},
+	  author = {},
+	  title = {}
+}
+
+% Names of supported elliptic curves
+@misc{rfc_EC_curves,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492#section-5.1.1}},
+	  author = {},
+	  title = {}
+}
+
+% Elliptic Curve Cipher Suite extensions
+@misc{rfc_EC_cipherSuites,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492#section-6}},
+	  author = {},
+	  title = {}
+}
+
+
+
+%@Misc{timmurphy.org,
+%howpublished = {\url{http://timmurphy.org/2009/07/22/line-spacing-in-latex-documents/}},
+%note = {Accessed April 4, 2010},
+%title = {Line Spacing in LaTeX documents},
+%author = {Murphy, Timothy I}
+%}

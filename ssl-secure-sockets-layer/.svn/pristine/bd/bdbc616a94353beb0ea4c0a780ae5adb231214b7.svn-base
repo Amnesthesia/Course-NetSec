@@ -1,0 +1,15 @@
+\section{Introduction} % Major section
+
+\subsection{History} % Sub-section
+
+In 1994 Netscape company developed the SSL protocol. This was made with a intention to make secure transmissions with an encrypted data path between a server and a client. To begin with SSL was created mainly for web browsers and communications with server.
+Netscape continued working on the SSL technology, and in 1995 they released SSL version 2.0. The problem with this version was that it had alot of vulnerabilities which could have been exploited. Some of the weaknesses was even released in a article[REF]. eks. of a released vulnerability was that if your host is already compromised the SSL doesn't do much to protect you. After not a very successful release on SSL 2.0 they reworked and tried to solve previous vulnerabilites. 
+In 1996 Netscape released SSL version 3.0. SSL 2.0 had a vulnerability which made outsiders able to change/modify data during transmission, but this was fixed in SSL 3.0. Version 2.0 had MACs which was encrypted at 40-bit, while the new v3.0 keys was encrypted at 128 bits. Because of the better security they implemented for authentication keys, SSL 3.0 was much 
+more secure against i.g. hacking attempts. 
+
+\subsection{Intro} % Sub-section
+
+SSL is a protocol containing "rules" used for communication between a client and server. SSL uses authenticated and encrypted communication to establish a secure connection. The protocol runs as a layer between the Transmission Control Protocol and Application layer. The main "job" for SSL is by providing encrypted data, that only the applications included is able to understand the data which is sent. It also provides detection of data if it's changed/modified during transmissions. Both parties agrees on which alghoritms to be used, which will also make sure that if a third party has changed/modified the data, it will be detected.
+Because of the encryption SSL provides by strong alghoritms, it makes it secure for data to not be readable for someone on the “outside” trying to get ahold of information that is sent.
+SSL use authentication to make sure you know who you are communicating with. The authentication is done by certificates and using public key security. 
+For a SSL connection to be established, it requires to go through the “handshake”. In the handshake there will be key exchanges, to make a symmetric key, which is used to encrypt the information transmitted through the SSL connection.

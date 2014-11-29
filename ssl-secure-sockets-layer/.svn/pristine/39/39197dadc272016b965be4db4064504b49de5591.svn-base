@@ -1,0 +1,9 @@
+\subsection{Graphical Representation}
+
+dsadsadada
+\begin{figure}[H] % SSL Handshake
+\center{\includegraphics[width=0.8\linewidth]{SSL_handshake_image}}
+\caption{SSL Handshake}
+\label{fig:speciation}
+\end{figure}
+dsadsadsdsa

@@ -1,0 +1,33 @@
+\section {Attacks Against The SSL Protocol}
+In the past we have seen a few different attacks targeting the SSL/TLS protocol, including BEAST~\cite{beastattack}, CRIME~\cite{crimeattack} and Lucky 13~\cite{lucky13}.\\
+And now, on the 20th International Workshop on Fast Software Encryption and the Blackhat Security conference in Amsterdam this year, two new attacks were presented to the participants.\\
+\bigskip
+What most of these attacks have in common is that they all are capable of silently decrypting browser cookies used to log in to websites. And obviously this can be a real threat against users of websites which are securing their communication with SSL/TLS.\\
+This section will also discuss a method which is using SSL to carry out a DoS attack. This attack vector was discovered and presented back in 2011.
+
+\subsection{BEAST}
+In 2011, the two researchers Juliano Rizzo and Thai Duong demonstrated a POC (Proof-of-consept) called Browser Exploit Against SSL/TLS (BEAST). This attack is known as a plaintext-recovery attack.\\
+The difference between BEAST and other similar attacks was that this exploit attacked the confidentiality of the SSL/TLS protocol.
+
+''\textit{During the encryption process, the protocol scrambles block after block of data using the previous encrypted block. It has long been theorized that attackers can manipulate the process to make educated guesses about the contents of the plaintext blocks.}''~\cite{theregisterBEAST}
+
+So if an attacker could make a correct guess, he/she would basically break the encryption and thus reveal potientially sensitive data.\\
+\bigskip
+Before the vulnerability was fixed, BEAST required about 2 seconds to decrypt each byte of a cookie, and since authentication cookies consists of between 1000 and 2000 characters it would take this attack about 10 minutes to work.\\
+Needless to say, this attack was a gigantic threat against websites that used an early version of TLS, and it obviously came as a shock to people who were working in the security field at that time.
+
+\subsection{Cipher Suite Rollback}
+When a client starts the SSL Handshake with the server, the client sends a list over all the cipher suits it supports. The server then chooses the strongest cipher suite both parties support.\\
+With a Cipher Suite Rollback Attack~\cite{sslrollbackattack}, an attacker can intercept the handshake, and send a list over weak and old cipher suit on behalf of the client, and thus ''forcing'' the client and server to use a weak encryption algorithm during the communication.\\
+The attacker can then take advantage of this, and in the worst case scenario obtain sensitive data and/or credentials.
+
+\subsection{SSL DDoS Attack}
+In traditional DoS/DDoS attacks the attacker will send massive amounts of data to the server and essentially take down the server and prevent other users from accessing the content. But in 2011 a group of researchers found a more clever way to perform a DoS/DDoS attack.\\
+When the client establish a connection to a server using a SSL connection iit requires about 15 times more processing power on the server than on the client. So by opening thousand of SSL connections the server's processor will eventually get overloaded, thus resulting in a successfull attack.\\
+\bigskip
+An ethical hacker that runs Darknet came up with a few different tips towards completing a successfull SSL DoS attack~\cite{sslddosattack}:
+\begin{itemize}
+\item The average server can do 300 handshakes per second. This would require 10-25\% of your laptops CPU
+\item Use multiple hosts (SSL-DOS) if an SSL Accelaretor is used.
+\item Don't rely on just port 443 (HTTPS). Test other ports as well; (SMTP, POP3S).
+\end{itemize}

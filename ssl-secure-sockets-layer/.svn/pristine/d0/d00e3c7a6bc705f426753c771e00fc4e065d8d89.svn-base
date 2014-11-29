@@ -1,0 +1,47 @@
+@misc{diginotarIncident,
+      author = "Kelly Jackson Higgins",
+      title = "Digital Certificate Authority Hacked, Dozens Of Phony Digital Certificates Issued",
+      month = "August",
+      year = "2011",
+      url = "http://www.darkreading.com/attacks-breaches/digital-certificate-authority-hacked-doz/231600498"
+}
+@misc{rfcEllipticCurve,
+      author = "Network Working Group",
+      title = "Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)",
+      month = "May",
+      year = "2006",
+      url = "http://tools.ietf.org/html/rfc4492"
+}
+@misc{ciscoSSLHandshake,
+      author = "Cisco",
+      title = "SSL Guide vA2(1.0)",
+      url = "http://www.cisco.com/en/US/docs/interfaces\_modules/services\_modules/ace/v3.00\_A2/configuration/ssl/guide/overview.html"
+}
+@misc{wikipediaSSLTLS,
+      author = "Wikipedia",
+      title = "Transport Layer Security",
+      url = "http://en.wikipedia.org/wiki/Secure\_Sockets\_Layer"
+}
+@misc{wikipediaHTTPS,
+      author = "Wikipedia",
+      title = "HTTP Secure",
+      url = "http://en.wikipedia.org/wiki/HTTP\_Secure"
+}
+@misc{digicert,
+      author = "Digicert",
+      title = "Digicert SSL description",
+      url = "http://www.digicert.com/ssl.htm"
+}
+@misc{sslshopper,
+      author = "sslshopper",
+      title = "The Purpose of using SSL Certificates",
+      url = "http://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html"
+}
+
+
+%Image sources:
+@misc{browservisualcues,
+      author = "Digicert",
+      title = "Browser Visual Cues",
+      url = "http://edge1.digicert.com/images/ev2.jpg"
+}

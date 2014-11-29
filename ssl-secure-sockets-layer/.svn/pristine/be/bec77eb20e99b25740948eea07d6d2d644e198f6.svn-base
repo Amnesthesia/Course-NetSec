@@ -1,0 +1,567 @@
+@misc{diginotarIncident,
+      howpublished = {\url{http://www.darkreading.com/attacks-breaches/digital-certificate-authority-hacked-doz/231600498}},
+      note = {Accessed May 9, 2013},
+      title = {Digital Certificate Authority Hacked, Dozens Of Phony Digital Certificates Issued},
+      author = {Kelly Jackson Higgins}
+}
+@misc{rfcEllipticCurve,
+      howpublished = {\url{http://tools.ietf.org/html/rfc4492}},
+      note = {Accessed May 9, 2013},
+      author = {Network Working Group},
+      title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)}
+}
+@misc{sslrollbackattack,
+      howpublished = {\url{http://www.cs.bham.ac.uk/~mdr/teaching/modules03/security/students/SS8a/SSLTLS.html}},
+      note = {Accessed May 14, 2013},
+      author = {University of Birmingham},
+      title = {Possible Attacks against SSL}
+}
+@misc{ciscoSSLHandshake,
+      howpublished = {\url{http://www.cisco.com/en/US/docs/interfaces_modules/services_modules/ace/v3.00_A2/configuration/ssl/guide/overview.htm}},
+      note = {Accessed May 9, 2013},
+      author = {Cisco},
+      title = {SSL Guide vA2(1.0)}
+}
+@misc{EVCert,
+      howpublished = {\url{http://www.sslshopper.com/cheapest-ev-ssl-certificates.html}},
+      note = {Accessed May 14, 2013},
+      author = {SSLShopper},
+      title = {EV SSL Certificates}
+}
+@misc{wikipediaSSLTLS,
+      howpublished = {\url{http://en.wikipedia.org/wiki/Secure_Sockets_Layer}},
+      note = {Accessed 8 May, 2013},
+      author = {Wikipedia},
+      title = {Transport Layer Security}
+}
+@misc{wikipediaHTTPS,
+      howpublished = {\url{http://en.wikipedia.org/wiki/HTTP_Secure}},
+      note = {Accessed 8 May, 2013},
+      author = {Wikipedia},
+      title = {HTTP Secure}
+}
+
+@misc{theregisterBEAST,
+      howpublished = {\url{http://www.theregister.co.uk/2011/09/19/beast_exploits_paypal_ssl/}},
+      note = {Accessed 14 May, 2013},
+      author = {Dan Goodin},
+      title = {Hackers break SSL encryption used by millions of sites}
+}
+@misc{digicert,
+      howpublished = {\url{http://www.digicert.com/ssl.htm}},
+      note = {Accessed on 7 May, 2013},
+      author = {Digicert},
+      title = {Digicert SSL Description}
+}
+@misc{sslshopper,
+      howpublished = {\url{http://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html}},
+      note = {Accessed on 7 May, 2013},
+      author = {SSLShopper},
+      title = {The Purpose of using SSL Certificates}
+}
+@misc{beastattack,
+      howpublished = {\url{http://www.theregister.co.uk/2011/09/27/beast_attacks_paypay/}},
+      note = {Accessed on 13 May, 2013},
+      author = {The Register},
+      title = {World takes notice as SSL-chewing BEAST is unleashed}
+}
+@misc{crimeattack,
+      howpublished = {\url{http://arstechnica.com/security/2012/09/crime-hijacks-https-sessions/}},
+      note = {Accessed on 13 May, 2013},
+      author = {ArsTechnica},
+      title = {Crack in Internet’s foundation of trust allows HTTPS session hijacking}
+}
+@misc{lucky13,
+      howpublished = {\url{http://arstechnica.com/security/2013/02/lucky-thirteen-attack-snarfs-cookies-protected-by-ssl-encryption}},
+      note = {Accessed on 13 May, 2013},
+      author = {ArsTechnica},
+      title = {''Lucky Thirteen'' attack snarfs cookies protected by SSL encryption}
+}
+@misc{sslattacks,
+      howpublished = {\url{http://arstechnica.com/security/2013/03/new-attacks-on-ssl-decrypt-authentication-cookies/}},
+      note = {Accessed on 13 May, 2013},
+      author = {ArsTechnica},
+      title = {Two new attacks on SSL decrypt authentication cookies}
+}
+
+@misc{des1,
+      howpublished = {\url{http://orlingrabbe.com/des.htm}},
+      note = {Accessed on 12 May, 2013},
+      author = {J. Orlin Grabbe},
+      title = {The DES Algorithm Illustrated}
+}
+
+@misc{des2,
+      howpublished = {\url{http://en.kioskea.net/contents/134-introduction-to-encryption-with-des}},
+      note = {Accessed on 12 May, 2013},
+      author = {kioskea},
+      title = {Introduction to encryption with DES}
+}
+
+@misc{des3,
+      howpublished = {\url{http://csrc.nist.gov/publications/fips/fips46-3/fips46-3.pdf}},
+      note = {Accessed on 12 May, 2013},
+      author = {National Institute of Standards and Technology},
+      title = {DATA ENCRYPTION STANDARD (DES)}
+}
+
+@misc{desWiki,
+      howpublished = {\url{http://en.wikipedia.org/wiki/Data_Encryption_Standard#The_Feistel_.28F.29_function}},
+      note = {Accessed on 12 May, 2013},
+      author = {Wikipedia},
+      title = {Data Encryption Standard}
+}
+
+@misc{feistelWiki,
+      howpublished = {\url{https://en.wikipedia.org/wiki/Feistel_network}},
+      note = {Accessed on 12 May, 2013},
+      author = {Wikipedia},
+      title = {Feistel cipher}
+}
+
+@misc{tableWiki,
+      howpublished = {\url{http://en.wikipedia.org/wiki/DES_supplementary_material#Permuted_choice_1_.28PC-1.29}},
+      note = {Accessed on 12 May, 2013},
+      author = {Wikipedia},
+      title = {DES supplementary material}
+}
+
+@misc{sboxWiki,
+      howpublished = {\url{http://en.wikipedia.org/wiki/Substitution_box}},
+      note = {Accessed on 12 May, 2013},
+      author = {Wikipedia},
+      title = {S-box}
+}
+
+@misc{sslv2,
+      howpublished = {\url{http://www.homeport.org/~adam/ssl.html}},
+      note = {Accessed on 5 May, 2013},
+      author = {Adam Shostack},
+      title = {An Overview of SSL (version 2)}
+}
+
+@misc{eHowSSL,
+      howpublished = {\url{http://www.ehow.com/about_6582030_history-ssl.html}},
+      note = {Accessed on 5 May, 2013},
+      author = {Nicole Martinez},
+      title = {The History of SSL}
+}
+
+@misc{sslHist,
+      howpublished = {\url{http://www.evsslcertificate.com/ssl/ssl-history.html}},
+      note = {Accessed on 5 May, 2013},
+      author = {evsslcertificate},
+      title = {History of SSL}
+}
+
+@misc{ibmIntro,
+      howpublished = {\url{http://publib.boulder.ibm.com/infocenter/tpfhelp/current/index.jsp?topic=\%2Fcom.ibm.ztpf-ztpfdf.doc_put.cur\%2Fgtps5\%2Fs5why.html}},
+      note = {Accessed on 5 May, 2013},
+      author = {IBM},
+      title = {Introduction to SSL}
+}
+
+@misc{how2ssl,
+      howpublished = {\url{http://how2ssl.com/articles/introduction_to_ssl/l}},
+      note = {Accessed on 5 May, 2013},
+      author = {how2ssl},
+      title = {Introduction to SSL}
+}
+
+@misc{oracleIntro,
+      howpublished = {\url{http://docs.oracle.com/cd/E13203_01/tuxedo/tux80/security/publicke.htm#1050680}},
+      note = {Accessed on 5 May, 2013},
+      author = {oracle},
+      title = {The SSL Protocol}
+}
+
+%Image sources:
+@misc{browservisualcues,
+      howpublished = {\url{http://edge1.digicert.com/images/ev2.jpg}},
+      author = {Digicert},
+      title = {Browser Visual Cues}
+}
+@misc{Symmetric_encryption,
+      howpublished = {\url{http://edge1.digicert.com/images/public-key.jpg}},
+      author = {Digicert},
+      title = {Symmetric encryption}
+}
+@misc{Asymmetric_encryption,
+      howpublished = {\url{http://edge1.digicert.com/images/encrypt-decrypt.jpg}},
+      author = {Digicert},
+      title = {Asymmetric encryption}
+}
+@misc{SSL_connection_process,
+      howpublished = {\url{http://www.sslshopper.com/assets/images/what-is-ssl-connection-process.png}},
+      author = {SSLshopper},
+      title = {SSL connection process}
+}
+@misc{pki_overview,
+      howpublished = {\url{http://www.sslshopper.com/assets/images/pki-overview.png}},
+      author = {SSLshopper},
+      title = {PKI Overview}
+}
+@misc{green_bar,
+      howpublished = {\url{http://www.symantec.com/content/en/us/enterprise/images/theme/verisign/b-thm-verisign-tab2-green-bar.gif}},
+      author = {Symantec},
+      title = {Green bar overview}
+}
+
+
+%
+% TLS 1.2 and 1.3 RFC references
+% - Messages and definition of terms
+%
+
+% Handshake process
+@misc{rfcHandshakeProcess,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-37}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Handshake Protocol},
+	  note = {Internet RFC5246}
+}
+
+% HelloRequest
+@misc{rfcHelloRequest,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-38}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Hello Request},
+	  note = {Internet RFC5246}
+}
+
+% ClientHello
+@misc{rfcClientHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-39}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - ClientHello},
+	  note = {Internet RFC5246}
+}
+
+% ServerHello
+@misc{rfcServerHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-42}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - ServerHello},
+	  note = {Internet RFC5246}
+}
+
+
+% ServerHelloDone
+@misc{rfcServerHelloDone,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-55}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - ServerHelloDone},
+	  note = {Internet RFC5246}
+}
+
+% Change Cipher Spec (protocol)
+@misc{rfcChangeCipherSpecProtocol,
+	 howpublished = {\url{}},
+	 author = {},
+	 title = {The Transport Layer Security (TLS) Protocol - Change Cipher Spec Protocol},
+	 note = {Internet RFC5246}
+}
+	 
+
+% Client Key Exchange Message
+@misc{rfcClientKeyExchange,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-57}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Client Key Exchange Message},
+	  note = {Internet RFC5246}
+}
+
+% Finished
+@misc{rfcFinished,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-63}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Finished},
+	  note = {Internet RFC5246}
+}
+
+% x.509 Certificate
+@misc{rfcServerCertificate,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#section-7.4.2}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Server Certificate},
+	  note = {Internet RFC5246}
+}
+
+% x.509 Certificate structure
+@misc{rfcX509certificateStructure,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5280\#section-4.1}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List - Basic Certificate Fields},
+	  note = {Internet RFC5280}
+}
+
+% Cipher Suites
+@misc{rfcCipherSuiteDefinition,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-83}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Cipher Suite Definitions},
+	  note = {Internet RFC5246}
+}
+
+% CipherSuite list
+@misc{rfcCipherSuiteList,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-75}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - The Cipher Suite},
+	  note = {Internet RFC5246}
+}
+
+%
+% SSL v3.0
+% - Messages and term definitions
+%
+
+% Message Codes
+@misc{sslMessageCodes,
+	  howpublished = {\url{}},
+	  author = {},
+	  title = {}
+}
+
+% PreMasterSecret, Diffie-Hellman
+@misc{rfcSSLDHPreMasterSecret,
+	  howpublished = {\url{http://tools.ietf.org/html/rfc6101\#section-6.1.2}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Diffie-Hellman},
+	  note = {Internet RFC6101}
+}
+
+% PreMasterSecret, RSA
+@misc{rfcSSLRSAPreMasterSecret,
+	  howpublished = {\url{http://tools.ietf.org/html/rfc6101\#section-6.1.1}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - RSA},
+	  note = {Internet RFC6101}
+}
+
+% MasterSecret
+@misc{rfcSSLMasterSecret,
+	  howpublished = {\url{http://tools.ietf.org/html/rfc6101\#section-6.1}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Cryptographic Calculations},
+	  note = {Internet RFC6101}
+}
+
+% Handshake process
+@misc{rfcSSLHandshakeProcess,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.5}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Handshake Protocol Overview},
+	  note = {Internet RFC6101}
+}
+
+% HelloRequest
+@misc{rfcSSLHelloRequest,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.6.1.1}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Hello Request},
+	  note = {Internet RFC6101}
+}
+
+% ClientHello
+@misc{rfcSSLClientHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.6.1.2}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Client Hello},
+	  note = {Internet RFC6101}
+}
+
+% ServerHello
+@misc{rfcSSLServerHello,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.6.1.3}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Server Hello},
+	  note = {Internet RFC6101}
+}
+
+% ServerHelloDone
+@misc{rfcSSLServerHelloDone,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.6.5}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Server Hello Done},
+	  note = {Internet RFC6101}
+}
+
+% Client Key Exchange Message
+@misc{rfcSSLClientKeyExchange,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.6.7}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Client Key Exchange Message},
+	  note = {Internet RFC6101}
+}
+
+% Finished
+@misc{rfcSSLFinished,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.6.9}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	  title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Finished},
+	  note = {Internet RFC6101}
+}
+
+% CipherSuite list
+@misc{rfcSSLCipherSuiteList,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#appendix-A.6}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	 title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - The CipherSuite},
+	 note = {Internet RFC6101}
+}
+
+% Change Cipher Spec (protocol)
+@misc{rfcSSLChangeCipherSpecProtocol,
+	 howpublished = {\url{https://tools.ietf.org/html/rfc6101\#section-5.3}},
+	 author = {A. Freier, P. Karlton, P. Kocher},
+	 title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Change Cipher Spec Protocol},
+	 note = {Internet RFC6101}
+}
+
+% Mac
+@misc{rfcSSLMAC,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc6101\#page-51}},
+	  author = {A. Freier, P. Karlton, P. Kocher},
+	 title = {The Secure Sockets Layer (SSL) Protocol Version 3.0 - Appendix B. Glossary},
+	 note = {Internet RFC6101}
+}
+
+
+%
+% RSA
+% + variations
+%
+
+% RSA Key Types
+@misc{rsaKeyTypes,
+
+	  howpublished = {\url{"http://xml2rfc.tools.ietf.org/html/rfc3447\#section-3"}},
+	  author = {J. Jonsson, B. Kaliski},
+	  title = {Public-Key Cryptography Standards (PKCS) \#1: RSA Cryptography
+                      Specifications Version 2.1 - Key types},
+	  note = {RFC3447},
+	  year = "2003"
+}
+
+% RSA Pubkey
+@misc{rsaPubKey,
+	  howpublished = {\url{"http://xml2rfc.tools.ietf.org/html/rfc2313\#section-6"}},
+	  author = {B. Kaliski},
+	  title = "Public-Key Cryptography Standards (PKCS) 1: RSA Cryptography
+                      Specifications Version 2.1 - Key types",
+	  note = {RFC3447}
+}
+
+% RSA Key Generation
+@misc{rsaKeyGen,
+	  howpublished = {\url{http://www.cs.duke.edu/courses/spring07/cps001/notes/lect13-4up.pdf}},
+	  author = {Jeff Forbes},
+	  title = {CompSci 1: Principles of Computer Science, Lecture 13},
+	  year = "2007"
+}
+
+%
+% Diffie-Hellman
+% + variations
+%
+
+% New Directions in Cryptography (original paper on Diffie-Hellman)
+@misc{NewDirectionsInCryptography,
+	  howpublished = {\url{http://www.cs.jhu.edu/~rubin/courses/sp03/papers/diffie.hellman.pdf}},
+	  author = {Whitfield Diffie, Martin E. Hellman},
+	  title = {New Directions in Cryptography},
+	  year = "1976"
+}
+
+% Diffie-Hellman
+@misc{algorithmDiffieHellman,
+	  howpublished = {\url{http://xml2rfc.tools.ietf.org/html/rfc2631\#section-2.1}},
+	  author = {E. Rescorla, RTFM Inc.},
+	  title = {Diffie-Hellman Key Agreement Method},
+	  year = "1999",
+	  note = "RFC2631"
+}
+
+% EC-Diffie-Hellman
+@misc{rfc_EC_DiffieHellman,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492\#section-5.10}},
+	  author = {S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller},
+	  title = {Elliptic Curve Cyptography (ECC) Cipher Suites for Transport Layer Security},
+	  note = "RFC4492"
+}
+
+% Ephemeral EC-Diffie-Hellman-RSA, EC-Diffie-Hellman-RSA, ECDH_Anon
+@misc{rfc_EC_DHRSA_ECDHERSA_ECDH,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492\#section-2.3}},
+	  author = {S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller},
+	  title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)},
+	  note = {Internet RFC4492}
+}
+
+% EC-Diffie-Hellman-DSA
+@misc{rfcEC_DHDSA,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492\#section-3.1}},
+	  author = {S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller},
+	  title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)},
+	  note = {Internet RFC4492}
+}
+
+% Ephemeral Diffie-Hellman parameter exchange
+@misc{rfcDHEparams,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc5246\#page-51}},
+	  author = {T. Dierks, E. Rescorla, RTFM, Inc.},
+	  title = {The Transport Layer Security (TLS) Protocol - Server Key Exchange Message},
+	  note = {Internet RFC5246}
+}
+
+% Ephemeral Diffie-Hellman Static-Static mode
+@misc{rfcDHstaticmode,
+	  howpublished = {\url{http://xml2rfc.tools.ietf.org/html/rfc2631\#section-2.4}},
+	  author = {E. Rescorla, RTFM, Inc.},
+	  title = {Diffie-Hellman Key Agreement Method - Static-Static mode},
+	  note = {Internet RFC2631}
+}
+
+
+%
+% Elliptic Curves
+%
+
+% Elliptic Curve addendum
+@misc{rfc_EC_addendum,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492}},
+	  author = {S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller},
+	  title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS)},
+	  note = {Internet RFC4492}
+}
+
+@misc{ec_strength,
+	 howpublished = {\url{https://www.rsa.com/rsalabs/node.asp?id=2245}},
+	 title = {How do elliptic curve cryptosystems compare with other cryptosystems?},
+	 author = {RSA Laboratories}
+}
+% Names of supported elliptic curves
+@misc{rfc_EC_curves,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492\#section-5.1.1}},
+	  author = {S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller},
+	  title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS) - Supported Elliptic Curves Extension},
+	  note = {Internet RFC4492}
+}
+
+% Elliptic Curve Cipher Suite extensions
+@misc{rfc_EC_cipherSuites,
+	  howpublished = {\url{https://tools.ietf.org/html/rfc4492\#section-6}},
+	  author = {S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller},
+	  title = {Elliptic Curve Cryptography (ECC) Cipher Suites for Transport Layer Security (TLS) - Cipher Suites},
+	  note = {Internet RFC4492}
+}
+
+
+
+%@Misc{timmurphy.org,
+%howpublished = {\url{http://timmurphy.org/2009/07/22/line-spacing-in-latex-documents/}},
+%note = {Accessed April 4, 2010},
+%title = {Line Spacing in LaTeX documents},
+%author = {Murphy, Timothy I}
+%}

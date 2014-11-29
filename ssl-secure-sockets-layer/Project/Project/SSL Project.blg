@@ -1,0 +1,103 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Arch Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: SSL Project.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: Short_Description.aux
+A level-1 auxiliary file: Global_Description.aux
+A level-1 auxiliary file: Certificate_Authority.aux
+A level-1 auxiliary file: Graphical_Representation.aux
+A level-1 auxiliary file: Bit_Level_Description.aux
+A level-1 auxiliary file: Analysis_Of_Recording.aux
+A level-1 auxiliary file: Attacks_Against_SSL.aux
+The style file: unsrt.bst
+Database file #1: Sources.bib
+You're missing a field name---line 464 of file Sources.bib
+ : 
+ : %howpublished = {\url{http://timmurphy.org/2009/07/22/line-spacing-in-latex-documents/}},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "des3"
+Warning--I didn't find a database entry for "tableWiki"
+Warning--I didn't find a database entry for "des1"
+Warning--I didn't find a database entry for "des2"
+Warning--I didn't find a database entry for "desWiki"
+Warning--I didn't find a database entry for "feistelWiki"
+Warning--I didn't find a database entry for "sboxWiki"
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcClientKeyExchange
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcCipherSuiteDefinition
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcCipherSuiteList
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcClientHello
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcServerHello
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcFinished
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcServerHelloDone
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcServerCertificate
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcX509certificateStructure
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "T. Dierks, E. Rescorla, RTFM, Inc." for entry rfcDHEparams
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfc_EC_addendum
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfc_EC_addendum
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfc_EC_curves
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfc_EC_curves
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfcEC_DHDSA
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfcEC_DHDSA
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfc_EC_DHRSA_ECDHERSA_ECDH
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "S. Blake-Wilson, N. Bolyard, V. Gupta, C. Hawk, B. Moeller" for entry rfc_EC_DHRSA_ECDHERSA_ECDH
+while executing---line 944 of file unsrt.bst
+You've used 46 entries,
+            1791 wiz_defined-function locations,
+            667 strings with 10929 characters,
+and the built_in function-call counts, 6052 in all, are:
+= -- 530
+> -- 178
+< -- 0
++ -- 90
+- -- 44
+* -- 6
+:= -- 938
+add.period$ -- 171
+call.type$ -- 46
+change.case$ -- 45
+chr.to.int$ -- 0
+cite$ -- 46
+duplicate$ -- 230
+empty$ -- 829
+format.name$ -- 44
+if$ -- 1449
+int.to.chr$ -- 0
+int.to.str$ -- 46
+missing$ -- 0
+newline$ -- 266
+num.names$ -- 44
+pop$ -- 304
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 121
+stack$ -- 0
+substring$ -- 0
+swap$ -- 46
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 44
+width$ -- 48
+write$ -- 486
+(There were 19 error messages)

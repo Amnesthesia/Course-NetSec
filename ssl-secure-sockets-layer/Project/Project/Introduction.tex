@@ -1,0 +1,15 @@
+\section{Introduction} % Major section
+
+\subsection{History} % Sub-section
+
+In 1994 Netscape company developed the SSL protocol. This was made with the intention to make secure transmissions with an encrypted data path between a server and a client. To begin with, SSL was created mainly for web browsers and communications with servers.\cite{sslHist} \\
+Netscape continued working on the SSL technology, and in 1995 they released SSL version 2.0. The problem with this version was that it had a lot of vulnerabilities which could have been exploited. Some of the weaknesses were even released in an article\cite{sslv2}. For example, one of the released vulnerabilities meant that if your host had already been compromised, SSL wouldn't do much to protect you. After a not-so-successful release of SSL 2.0, they reworked the protocol and tried to solve previous vulnerabilities. \\
+In 1996 Netscape released SSL version 3.0. SSL 2.0 had a vulnerability which enabled outsiders to change/modify data during transmission, but this was fixed in SSL 3.0. Version 2.0 had MACs which was encrypted at 40-bit, while the new v3.0 keys were encrypted at 128 bits. Because of the improved security they implemented for authentication keys, SSL 3.0 was much more secure against i.e. hacking attempts. \cite{eHowSSL,sslHist}
+
+\subsection{Introduction} % Sub-section
+
+SSL is a protocol containing "rules" used for communication between a client and server. SSL uses authenticated and encrypted communication to establish a secure connection. The protocol runs as a layer between the Transmission Control Protocol and Application layer. The main "job" for SSL is to provide encrypt data being transmitted and decrypt data being received, which only the applications using it should be able to do.\cite{oracleIntro} It also provides detection of whether or not data has been changed/modified during transmission. Both parties agree on which algorithms to use for exchanging keys, authenticating one another, encrypting/decrypting the data, as well as checking its integrity; to make sure that detection of a third party changing/modifying the data will be possible.
+Because of the encryption SSL provides by the use of strong algorithms, it allows for secure data communication, denying a potential third party to access the transmitted data.\cite{ibmIntro}
+SSL uses authentication to make sure you know who you are communicating with, by the use of certificates and public key encryption, as well as allowing messages to be signed.\cite{oracleIntro}
+For an SSL connection to be established, it's required to go through the “handshake”, in which the key exchange occurs. During this procedure, a pre-secret key is created and then subsequently turned into a master key to allow for symmetric encryption of the information transmitted through the SSL connection.\cite{how2ssl}
+In this report, we'll try to explain these procedures, and we'll go over some of the algorithms used in both the handshake, as well as the encryption that follows.

@@ -1,0 +1,35 @@
+\subsection{Certificate Authority}
+
+\subsubsection{Introduction}
+
+\subsubsection{Issuing A Certificate}
+
+\subparagraph{Domain Validation}
+
+\subparagraph{Example}
+
+\subsubsection{Providers}
+Worldwide there are a number of certificate authories, and the business is fragmented with national and regional providers.\\
+However, certificates used for website security is largely held and issued by a small number of companies, and as of today more than 50 root certificates are trusted in the most popular web browers.\\\\
+The market share between the top CA's, from W3Techs survey 2012, shows the following:
+\begin{itemize}
+	\item{Symantec (including VeriSign, Thawte \& GeoTrust) with 42.9\%}
+	\item{Comodo with 26\%}
+	\item{GoDaddy with 14\%}
+	\item{GlobalSign with 7.7\%}
+\end{itemize}
+
+\subsubsection{CA Compromise}
+A certificate authority compromise (CA Compromise) is an incident where an attacker is able to use the private key of a CA to issue fake certificates.\\
+The worst case scenario is when a Root Certificate Authority is compromised. If that happen the Root Certificate Authority must notify all the relaying parties who trust their certificate, so that the relaying parties can stop trusting that specific certificate.\\\\
+If however an Intermediate Root Certificate Authority is compromised, the Root Certificate Authority must revoke those certificates. And obviously the entitiy that got compromised must replace those certificates immediately, since those certificates no longer can be used due to the revocation.
+
+\subparagraph{DigiNotar Incident}~\\
+On august 30, 2011, DigiNotar confirmed~\cite{diginotarIncident} that they had been compromised and that Google.com certificates was obtained by the attackers.\\
+
+``\emph{What at first appeared to be a one-off attack targeting Google Gmail users was actually part of a larger breach at Dutch digital certificate authority (CA) DigiNotar, which today confirmed speculation that it indeed was hacked and its SSL and EV-SSL CA system abused by attackers.\\
+"The company found out on July 19 that a hacking attempt had happened. At that moment, DigiNotar ordered an external security audit. This audit concluded that all fraudulently issued certificates were revoked. We found out yesterday, through Govcert, that the Google certificate was active. We revoked it immediately," said a spokesman today at Vasco Data Security International, of which the Dutch DigiNotar is a wholly owned subsidiary.}''
+% Source: http://www.darkreading.com/attacks-breaches/digital-certificate-authority-hacked-doz/231600498
+
+\subparagraph{Consequences Of A Compromise}~\\ % Følger av en compromise
+sasasasa

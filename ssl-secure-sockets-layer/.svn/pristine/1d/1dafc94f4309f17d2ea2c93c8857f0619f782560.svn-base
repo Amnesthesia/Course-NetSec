@@ -1,0 +1,49 @@
+\subsection{Graphical Representation}
+
+Random pictures we might use:
+
+\begin{figure}[H] % SSL Handshake
+\center{\includegraphics[width=0.8\linewidth]{SSL_handshake_image}}
+\caption{SSL Handshake}
+\label{fig:speciation}
+\end{figure}
+
+--------------
+
+\begin{figure}[H] % SSL connection process
+\center{\includegraphics[width=0.8\linewidth]{what-is-ssl-connection-process}}
+\caption{SSL connection process\cite{SSL_connection_process}}
+\label{fig:speciation}
+\end{figure}
+
+------------------
+
+\begin{figure}[H] % Asymmetric encryption
+\center{\includegraphics[width=0.8\linewidth]{Asymmetric_encryption}}
+\caption{Asymmetric encryption\cite{Asymmetric_encryption}}
+\label{fig:speciation}
+\end{figure}
+
+-------------
+
+\begin{figure}[H] % symmetric encryption
+\center{\includegraphics[width=0.8\linewidth]{symmetric_encryption}}
+\caption{Symmetric encryption\cite{Symmetric_encryption}}
+\label{fig:speciation}
+\end{figure}
+
+-------------
+
+\begin{figure}[H] % PKI overview
+\center{\includegraphics[width=0.8\linewidth]{pki-overview}}
+\caption{PKI overview\cite{pki_overview}}
+\label{fig:speciation}
+\end{figure}
+
+-------------
+
+\begin{figure}[H] % Green bar overview
+\center{\includegraphics[width=0.8\linewidth]{green_bar}}
+\caption{Green bar overview\cite{green_bar}}
+\label{fig:speciation}
+\end{figure}
